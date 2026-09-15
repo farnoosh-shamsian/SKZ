@@ -42,17 +42,16 @@ header.top .spacer{flex:1}
 .ghost{font-family:system-ui,sans-serif;font-size:.74rem;color:var(--dim);
   border:1px solid var(--rule);border-radius:4px;padding:.24rem .55rem}
 .ghost:hover{border-color:var(--accent);color:var(--accent)}
-.ghost.icon{padding:.24rem;width:1.72rem;height:1.72rem;display:inline-flex;
-  align-items:center;justify-content:center;flex:none}
-.ghost.icon svg{width:.95rem;height:.95rem;display:block;fill:none;stroke:currentColor;
+.ghost.icon{padding:.24rem .5rem}
+.ghost.icon svg{width:.95rem;height:.95rem;vertical-align:-.17em;fill:none;stroke:currentColor;
   stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 /* show the theme you would switch TO; media query is the pre-script default,
    the data-eff attribute wins once the script knows the effective theme */
 #themebtn .i-sun{display:none}
-@media (prefers-color-scheme:dark){#themebtn .i-sun{display:block}#themebtn .i-moon{display:none}}
-#themebtn[data-eff="light"] .i-moon{display:block}
+@media (prefers-color-scheme:dark){#themebtn .i-sun{display:inline-block}#themebtn .i-moon{display:none}}
+#themebtn[data-eff="light"] .i-moon{display:inline-block}
 #themebtn[data-eff="light"] .i-sun{display:none}
-#themebtn[data-eff="dark"] .i-sun{display:block}
+#themebtn[data-eff="dark"] .i-sun{display:inline-block}
 #themebtn[data-eff="dark"] .i-moon{display:none}
 
 #main{flex:1;display:flex;min-height:0}
@@ -193,10 +192,7 @@ details.kmore{border-top:1px solid var(--rule2);padding-top:.35rem}
     <span class="sub" id="counts"></span>
     <span class="spacer"></span>
     <button class="ghost" id="lblbtn" aria-pressed="true">Labels</button>
-    <button class="ghost icon" id="themebtn" title="Switch theme" aria-label="Switch theme">
-      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 13.4A8.4 8.4 0 1 1 10.6 3.6a6.6 6.6 0 0 0 9.8 9.8z"/></svg>
-      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
-    </button>
+    <button class="ghost icon" id="themebtn" title="Switch theme" aria-label="Switch theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 13.4A8.4 8.4 0 1 1 10.6 3.6a6.6 6.6 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg></button>
     <button class="ghost" id="aboutbtn">About</button>
   </header>
 
