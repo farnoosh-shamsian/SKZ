@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ŠKZ — the trilingual inscription of Šābuhr I</title>
+<meta name="description" content="The Greek, Parthian and Middle Persian versions of the inscription at the Kaʿba-ye Zartošt, aligned at sentence and word level, with datasets of named entities and places.">
+<style>
+:root{
+  --bg:#f6f4ef; --panel:#fffdf8; --ink:#241f1a; --dim:#6e655b; --faint:#9a9086;
+  --rule:#ddd5c8; --rule2:#eae3d7; --accent:#8c2f26; --shadow:rgba(60,45,25,.13);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#171513; --panel:#201d1a; --ink:#ece5da; --dim:#a79d90; --faint:#7d7469;
+  --rule:#3a342d; --rule2:#2b2622; --accent:#d97a6c; --shadow:rgba(0,0,0,.5);
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.62 "Gentium Plus","Gentium Book Basic",Cardo,"New Athena Unicode","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:44rem;margin:0 auto;padding:3.2rem 1.15rem 4rem}
+
+header h1{font-size:1.62rem;font-weight:600;line-height:1.25;margin:0 0 .4rem;letter-spacing:.01em}
+header .sub{font-family:system-ui,sans-serif;font-size:.82rem;color:var(--dim);
+  letter-spacing:.06em;text-transform:uppercase;margin:0 0 1.5rem}
+.lede{font-size:1.04rem;margin:0 0 1.1rem}
+p{margin:0 0 1rem}
+
+h2{font-size:.76rem;font-weight:600;font-family:system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--dim);margin:2.9rem 0 .9rem;
+  padding-bottom:.45rem;border-bottom:1px solid var(--rule)}
+
+.feature{background:var(--panel);border:1px solid var(--rule);border-radius:7px;
+  padding:1.3rem 1.4rem;box-shadow:0 1px 4px var(--shadow);margin:0 0 .6rem}
+.feature h3{font-size:1.12rem;font-weight:600;margin:0 0 .45rem}
+.feature p{font-size:.95rem;color:var(--dim);margin:0 0 1.05rem}
+.go{display:inline-block;font-family:system-ui,sans-serif;font-size:.85rem;font-weight:500;
+  text-decoration:none;color:var(--panel);background:var(--accent);
+  padding:.5rem 1.05rem;border-radius:5px}
+.go:hover{opacity:.88}
+
+dl{margin:0}
+dt{font-weight:600;margin:1.25rem 0 .2rem;font-size:1rem}
+dt:first-child{margin-top:0}
+dd{margin:0 0 .35rem;font-size:.94rem;color:var(--dim)}
+dd.files{font-family:system-ui,sans-serif;font-size:.79rem}
+dd.files a{margin-right:.85rem;white-space:nowrap}
+.count{font-family:system-ui,sans-serif;font-size:.76rem;color:var(--faint);
+  font-weight:400;letter-spacing:.02em}
+
+.note{font-size:.9rem;color:var(--dim);border-left:2px solid var(--rule);
+  padding-left:.95rem;margin:1.4rem 0}
+.cite{font-size:.92rem;margin:0 0 .85rem;padding-left:1.6rem;text-indent:-1.6rem}
+footer{margin-top:3.4rem;padding-top:1.1rem;border-top:1px solid var(--rule);
+  font-family:system-ui,sans-serif;font-size:.79rem;color:var(--faint)}
+footer a{color:var(--dim)}
+@media (max-width:480px){
+  .wrap{padding-top:2.2rem}
+  header h1{font-size:1.38rem}
+  dd.files a{display:inline-block;margin-bottom:.2rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>The trilingual inscription of Šābuhr I<br>at the Kaʿba-ye Zartošt</h1>
+  <p class="sub">ŠKZ · aligned corpus, named entities, places</p>
+</header>
+
+<p class="lede">The Greek, Parthian and Middle Persian versions of the inscription, aligned at
+both sentence and word level, with a dataset of the named entities and a gazetteer of every
+place the text names.</p>
+
+<p>Line numbering follows Huyse (1999). The Greek text is taken from the digital epigraphy
+collection of the Packard Humanities Institute, which uses the edition of Canali De Rossi (2004);
+the Parthian and Middle Persian versions follow Huyse's edition, the Parthian by way of Jake
+Nabel's <a href="http://parthiansources.com">Parthian Sources</a> and the Middle Persian added
+here. The alignments were produced with the Ugarit alignment tool and are also
+<a href="https://ugarit.ialigner.com/userProfile.php?userid=40&amp;tgid=21881">browsable on
+Ugarit</a>.</p>
+
+<h2>The map</h2>
+
+<div class="feature">
+  <h3>Places of the ŠKZ</h3>
+  <p>All 149 places behind the inscription's location names — identified, linked to Pleiades and
+  Wikidata, and mapped where they can be located. Search, filter and click any place for its
+  attestations, its surface forms in the three versions, and the basis of the identification.</p>
+  <a class="go" href="geo-linking/skz-map.html">Open the map →</a>
+</div>
+<p class="count">One self-contained file: no libraries, no map tiles, no network requests. It
+works offline once loaded.</p>
+
+<h2>The datasets</h2>
+
+<dl>
+  <dt>Sentence-level corpus <span class="count">51 ŠKZ lines</span></dt>
+  <dd>The three versions side by side, aligned segment by segment on Huyse’s line numbering,
+  with the Parthian in both transliteration and transcription.</dd>
+  <dd class="files"><a href="SKZ-sentence-level.tsv">TSV</a><a href="SKZ-sentence-level.csv">CSV</a><a href="SKZ-sentence-level.xlsx">XLSX</a></dd>
+
+  <dt>Word-level alignment pairs <span class="count">1,013 pairs</span></dt>
+  <dd>Greek, Parthian and Middle Persian correspondences with their frequency in the line, as one
+  table or as one file per line.</dd>
+  <dd class="files"><a href="alignment-pairs.tsv">TSV</a><a href="alignment-pairs.csv">CSV</a><a href="alignment-pairs.xlsx">XLSX</a><a href="alignment-pairs-separate-files.zip">per line (ZIP)</a></dd>
+
+  <dt>Named entities <span class="count">412 attestations</span></dt>
+  <dd>Classified by hand as persons (PER), locations (LOC) or location derivatives (LOCderiv),
+  across all three versions, with the line number and, for many, a Wikidata item.</dd>
+  <dd class="files"><a href="named-entities.tsv">TSV</a><a href="named-entities.csv">CSV</a></dd>
+
+  <dt>Place gazetteer <span class="count">149 places, 134 located</span></dt>
+  <dd>One row per place behind the location attestations: identification and certainty, Pleiades
+  and Wikidata identifiers, coordinates, and the Glossar entry and book page each identification
+  rests on. <a href="https://github.com/farnoosh-shamsian/SKZ/tree/main/geo-linking">Column-by-column
+  documentation.</a></dd>
+  <dd class="files"><a href="geo-linking/skz-places.tsv">TSV</a><a href="geo-linking/skz-map.html">map</a></dd>
+</dl>
+
+<p class="note">Huyse 1999 is in copyright, and these files point to it rather than reproduce it.
+Each place record carries his lemma, his ON/LN/VN type and the book page, so every identification
+can be checked against the printed page.</p>
+
+<h2>Citation</h2>
+
+<p class="cite">F. Shamsian &amp; M. Berti, “Annotating Named Entities in the Trilingual
+Inscription at Kaʿba-ye Zartošt (ŠKZ)”, <i>Digital Classics Online</i> 12,2 (2026),
+<a href="https://doi.org/10.11588/dco.2026.12.112297">doi:10.11588/dco.2026.12.112297</a>.</p>
+
+<h2>References</h2>
+
+<p class="cite">Canali De Rossi, F. (ed.), <i>Iscrizioni dello estremo oriente greco. Un
+repertorio</i>. Inschriften griechischer Städte aus Kleinasien 65, Bonn 2004.</p>
+
+<p class="cite">Huyse, P. (ed.), <i>Die dreisprachige Inschrift Šābuhrs I. an der Kaʿba-i Zardušt
+(ŠKZ)</i>. Corpus Inscriptionum Iranicarum III/I/I, London 1999.</p>
+
+<footer>
+  <a href="https://github.com/farnoosh-shamsian/SKZ">github.com/farnoosh-shamsian/SKZ</a> ·
+  coastline on the map generalised from
+  <a href="https://www.naturalearthdata.com">Natural Earth</a> (1:50m land, public domain)
+</footer>
+
+</div>
+</body>
+</html>
