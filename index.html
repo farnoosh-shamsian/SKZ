@@ -10,17 +10,31 @@
   --bg:#f6f4ef; --panel:#fffdf8; --ink:#241f1a; --dim:#6e655b; --faint:#9a9086;
   --rule:#ddd5c8; --rule2:#eae3d7; --accent:#8c2f26; --shadow:rgba(60,45,25,.13);
 }
-@media (prefers-color-scheme:dark){:root{
+:root[data-theme="dark"]{
   --bg:#171513; --panel:#201d1a; --ink:#ece5da; --dim:#a79d90; --faint:#7d7469;
   --rule:#3a342d; --rule2:#2b2622; --accent:#d97a6c; --shadow:rgba(0,0,0,.5);
-}}
+}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
   font:16px/1.62 "Gentium Plus","Gentium Book Basic",Cardo,"New Athena Unicode","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   -webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
 a:hover{text-decoration-thickness:2px}
-.wrap{max-width:44rem;margin:0 auto;padding:3.2rem 1.15rem 4rem}
+.wrap{max-width:44rem;margin:0 auto;padding:3.2rem 1.15rem 4rem;position:relative}
+
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+#themebtn{position:absolute;top:1.45rem;right:1.15rem;line-height:0;color:var(--dim);
+  border:1px solid var(--rule);border-radius:4px;padding:.3rem .45rem}
+#themebtn:hover{border-color:var(--accent);color:var(--accent)}
+#themebtn svg{width:.95rem;height:.95rem;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+/* show the theme you would switch TO; light is the default until the script
+   sets data-eff, so the base rules below stand in for it */
+#themebtn .i-sun{display:none}
+#themebtn[data-eff="light"] .i-moon{display:block}
+#themebtn[data-eff="light"] .i-sun{display:none}
+#themebtn[data-eff="dark"] .i-sun{display:block}
+#themebtn[data-eff="dark"] .i-moon{display:none}
 
 header h1{font-size:1.62rem;font-weight:600;line-height:1.25;margin:0 0 .4rem;letter-spacing:.01em}
 header .sub{font-family:system-ui,sans-serif;font-size:.82rem;color:var(--dim);
@@ -58,6 +72,7 @@ footer{margin-top:3.4rem;padding-top:1.1rem;border-top:1px solid var(--rule);
 footer a{color:var(--dim)}
 @media (max-width:480px){
   .wrap{padding-top:2.2rem}
+  #themebtn{top:.75rem}
   header h1{font-size:1.38rem}
   dd.files a{display:inline-block;margin-bottom:.2rem}
 }
@@ -65,6 +80,8 @@ footer a{color:var(--dim)}
 </head>
 <body>
 <div class="wrap">
+
+<button id="themebtn" title="Switch theme" aria-label="Switch theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 13.4A8.4 8.4 0 1 1 10.6 3.6a6.6 6.6 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg></button>
 
 <header>
   <h1>The trilingual inscription of Šābuhr I<br>at the Kaʿba-ye Zartošt</h1>
@@ -110,7 +127,8 @@ works offline once loaded.</p>
 
   <dt>Named entities <span class="count">412 attestations</span></dt>
   <dd>Classified by hand as persons (PER), locations (LOC) or location derivatives (LOCderiv),
-  across all three versions, with the line number and, for many, a Wikidata item.</dd>
+  across all three versions, with the line number each one appears in. The location rows are
+  linked to Pleiades and Wikidata through the place gazetteer below.</dd>
   <dd class="files"><a href="named-entities.tsv">TSV</a><a href="named-entities.csv">CSV</a></dd>
 
   <dt>Place gazetteer <span class="count">149 places, 134 located</span></dt>
@@ -124,6 +142,16 @@ works offline once loaded.</p>
 <p class="note">Huyse 1999 is in copyright, and these files point to it rather than reproduce it.
 Each place record carries his lemma, his ON/LN/VN type and the book page, so every identification
 can be checked against the printed page.</p>
+
+<h2>A note on AI</h2>
+
+<p class="note">The corpus and the named entities were annotated by hand, and carried no links.
+The geographic layer on top of them was built automatically, with Claude Opus 5:
+Huyse’s <i>Griechisches Glossar</i> was read off the scanned pages by OCR, matched entry by entry
+to the annotated names, and every place was then resolved against the Pleiades and Wikidata data.
+The map was generated the same way. A process like this can leave errors behind. If you find one,
+please
+<a href="https://farnoosh-shamsian.github.io/pages/contact.html">let me know</a>.</p>
 
 <h2>Citation</h2>
 
@@ -146,5 +174,24 @@ repertorio</i>. Inschriften griechischer Städte aus Kleinasien 65, Bonn 2004.</
 </footer>
 
 </div>
+
+<script>
+const tb = document.getElementById('themebtn');
+// light is the default; dark is only ever an explicit choice
+function effTheme(){
+  return document.documentElement.getAttribute('data-theme') || 'light';
+}
+function syncTheme(){
+  const eff = effTheme();
+  tb.setAttribute('data-eff', eff);
+  tb.title = 'Switch to ' + (eff === 'dark' ? 'light' : 'dark') + ' theme';
+  tb.setAttribute('aria-label', tb.title);
+}
+tb.onclick = ()=>{
+  document.documentElement.setAttribute('data-theme', effTheme()==='dark' ? 'light' : 'dark');
+  syncTheme();
+};
+syncTheme();
+</script>
 </body>
 </html>
