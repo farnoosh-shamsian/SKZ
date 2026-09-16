@@ -23,28 +23,28 @@ the Greek form plus the line number.
 | `wikidata_qid`, `wikidata_uri`, `wikidata_label` | Wikidata |
 | `latitude`, `longitude`, `coord_source`, `coord_precision` | position, where it came from, and how much it is worth saying — `point` a site you can stand on, `centroid` a notional centre for something with an extent, `approximate` a position placed by hand |
 | `glossar_lemma`, `huyse_type`, `huyse_book_page` | the Glossar entry behind the identification, and its page. `huyse_type` is Huyse's own tag: `ON` place name, `LN` land name, `VN` name of a people, `BN` mountain name, `Adv.` an adverb lemma (only ἀνωτάτω, behind Abaršahr) |
-| `huyse_verdict`, `huyse_check_note` | what checking the printed page did to our record — `confirms`, `corrects`, `resolves`, `refines`, `downgrades`, `flags` — and the specific finding |
-| `note` | our own editorial note on the record |
-| `text_flags`, `huyse_flags`, `link_flags` | what is emended, restored or missing in the text, what Huyse marks, and what is unlinked — visible rather than buried |
+| `huyse_verdict`, `huyse_check_note` | how the record stands to his printed entry — `confirms`, `corrects`, `resolves`, `refines`, `downgrades`, `flags` — and what that entry says |
+| `note` | a short note on the record: what the identification turns on, or what Huyse’s entry says |
+| `text_flags`, `huyse_flags`, `link_flags` | what is emended, restored or missing in the text, what Huyse marks, and what is unlinked |
 | `resolution`, `n_flags` | how a disagreement with Huyse was settled, and how many flags the record carries |
 
 134 places carry coordinates. The map separates the other 15 by why they are off it:
 Huyse names them but their localisation is disputed or unknown, or he states outright that
 they cannot be identified.
 
-Every identification has been checked against the printed page, and where our reading and
-Huyse's differed, his was adopted - see the
-`huyse_verdict`, `huyse_check_note` and `resolution` columns.
+Each identification is referred to the page of the Glossar it rests on, and where it and
+Huyse's entry differed, his reading was adopted - see the `huyse_verdict`,
+`huyse_check_note` and `resolution` columns.
 
 ## Method
 
 Identifications and localisations follow Huyse's *Griechisches Glossar* (Band 1,
-pp. 114–171), checked entry by entry against the printed page, with Band 2's *Kommentar*
-used for the contested cases. Places were then resolved against the full Pleiades dumps
-and against every Wikidata item carrying a Pleiades ID (P1584); identifiers are never
-written from memory.
+pp. 114–171), entry by entry, with Band 2's *Kommentar* for the contested cases. Places
+were then resolved against the full Pleiades dumps and against every Wikidata item
+carrying a Pleiades ID (P1584), so that every identifier in the table comes from those
+sources rather than from a guess at the number.
 
-Some corrections this produced, all of them applied: Ἀριστίαν is Arethusa / ar-Rastan,
+Corrections this produced: Ἀριστίαν is Arethusa / ar-Rastan,
 not the unlocated "Aristeia" of BAtlas 62; Ἁμαστρίας is Asturia in
 northern Iberia - a land, not the Paphlagonian city Amastris; Καμπανίας stands for Pamphylia and
 Λυσιτανίας for provincia Africa; Σηβάστιαν in line 29 is Sebasteia / Sivas; Μηιακαριρη
