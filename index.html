@@ -5,8 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ŠKZ — the trilingual inscription of Šābuhr I</title>
 <meta name="description" content="The Greek, Parthian and Middle Persian versions of the inscription at the Kaʿba-ye Zartošt, aligned at sentence and word level, with datasets of named entities and places.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
 <style>
 :root{
+  /* Didaskalos' typography: Cambria for reading, Playfair Display for headings.
+     Gentium and New Athena sit behind Georgia to catch polytonic Greek and the
+     Iranian transliteration where Cambria is not installed. */
+  --serif:Cambria,Georgia,"Gentium Plus","New Athena Unicode","Times New Roman",serif;
+  --display:"Playfair Display",Cambria,Georgia,serif;
   --bg:#f6f4ef; --panel:#fffdf8; --ink:#241f1a; --dim:#6e655b; --faint:#9a9086;
   --rule:#ddd5c8; --rule2:#eae3d7; --accent:#8c2f26; --shadow:rgba(60,45,25,.13);
 }
@@ -16,11 +24,11 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font:16px/1.62 "Gentium Plus","Gentium Book Basic",Cardo,"New Athena Unicode","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  font:1.1rem/1.6 var(--serif);
   -webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
 a:hover{text-decoration-thickness:2px}
-.wrap{max-width:44rem;margin:0 auto;padding:3.2rem 1.15rem 4rem;position:relative}
+.wrap{max-width:44rem;margin:0 auto;padding:3.7rem 1.15rem 4rem;position:relative}
 
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #themebtn{position:absolute;top:1.45rem;right:1.15rem;line-height:0;color:var(--dim);
@@ -36,44 +44,44 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #themebtn[data-eff="dark"] .i-sun{display:block}
 #themebtn[data-eff="dark"] .i-moon{display:none}
 
-header h1{font-size:1.62rem;font-weight:600;line-height:1.25;margin:0 0 .4rem;letter-spacing:.01em}
-header .sub{font-family:system-ui,sans-serif;font-size:.82rem;color:var(--dim);
-  letter-spacing:.06em;text-transform:uppercase;margin:0 0 1.5rem}
-.lede{font-size:1.04rem;margin:0 0 1.1rem}
+header h1{font-family:var(--display);font-size:clamp(1.55rem,5vw,2.5rem);font-weight:700;
+  line-height:1.16;margin:0 0 .5rem;letter-spacing:0}
+header .sub{font-size:.9rem;color:var(--dim);
+  letter-spacing:.16em;text-transform:uppercase;margin:0 0 1.6rem}
+.lede{font-size:1.18rem;margin:0 0 1.1rem}
 p{margin:0 0 1rem}
 
-h2{font-size:.76rem;font-weight:600;font-family:system-ui,sans-serif;text-transform:uppercase;
-  letter-spacing:.1em;color:var(--dim);margin:2.9rem 0 .9rem;
+h2{font-family:var(--display);font-size:clamp(1.2rem,3.6vw,1.42rem);font-weight:700;line-height:1.25;
+  color:var(--dim);margin:2.9rem 0 .9rem;
   padding-bottom:.45rem;border-bottom:1px solid var(--rule)}
 
 .feature{background:var(--panel);border:1px solid var(--rule);border-radius:7px;
   padding:1.3rem 1.4rem;box-shadow:0 1px 4px var(--shadow);margin:0 0 .6rem}
-.feature h3{font-size:1.12rem;font-weight:600;margin:0 0 .45rem}
-.feature p{font-size:.95rem;color:var(--dim);margin:0 0 1.05rem}
-.go{display:inline-block;font-family:system-ui,sans-serif;font-size:.85rem;font-weight:500;
+.feature h3{font-size:1.22rem;font-weight:700;margin:0 0 .45rem}
+.feature p{font-size:1.02rem;color:var(--dim);margin:0 0 1.05rem}
+.go{display:inline-block;font-size:.95rem;font-weight:700;
   text-decoration:none;color:var(--panel);background:var(--accent);
   padding:.5rem 1.05rem;border-radius:5px}
 .go:hover{opacity:.88}
 
 dl{margin:0}
-dt{font-weight:600;margin:1.25rem 0 .2rem;font-size:1rem}
+dt{font-weight:700;margin:1.25rem 0 .2rem;font-size:1.12rem}
 dt:first-child{margin-top:0}
-dd{margin:0 0 .35rem;font-size:.94rem;color:var(--dim)}
-dd.files{font-family:system-ui,sans-serif;font-size:.79rem}
+dd{margin:0 0 .35rem;font-size:1.02rem;color:var(--dim)}
+dd.files{font-size:.95rem}
 dd.files a{margin-right:.85rem;white-space:nowrap}
-.count{font-family:system-ui,sans-serif;font-size:.76rem;color:var(--faint);
+.count{font-size:.92rem;color:var(--faint);
   font-weight:400;letter-spacing:.02em}
 
-.note{font-size:.9rem;color:var(--dim);border-left:2px solid var(--rule);
+.note{font-size:.98rem;color:var(--dim);border-left:2px solid var(--rule);
   padding-left:.95rem;margin:1.4rem 0}
-.cite{font-size:.92rem;margin:0 0 .85rem;padding-left:1.6rem;text-indent:-1.6rem}
+.cite{font-size:1rem;margin:0 0 .85rem;padding-left:1.6rem;text-indent:-1.6rem}
 footer{margin-top:3.4rem;padding-top:1.1rem;border-top:1px solid var(--rule);
-  font-family:system-ui,sans-serif;font-size:.79rem;color:var(--faint)}
+  font-size:.92rem;color:var(--faint)}
 footer a{color:var(--dim)}
 @media (max-width:480px){
-  .wrap{padding-top:2.2rem}
+  .wrap{padding-top:3.2rem}
   #themebtn{top:.75rem}
-  header h1{font-size:1.38rem}
   dd.files a{display:inline-block;margin-bottom:.2rem}
 }
 </style>
