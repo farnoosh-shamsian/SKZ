@@ -22,7 +22,7 @@ The named entity dataset contains 412 named entities, extracted and classified m
 
 ## Places
 
-[`geo-linking/`](geo-linking/) identifies the 150 places behind the 206 LOC and LOCderiv attestations, links them to Pleiades and Wikidata, and maps the 136 that can be located. Identifications follow Huyse's *Griechisches Glossar* (Band 1, pp. 114–171), checked entry by entry against the printed page. [`geo-linking/skz-map.html`](geo-linking/skz-map.html) is a single self-contained file with no libraries and no network requests; [`geo-linking/README.md`](geo-linking/README.md) documents the gazetteer column by column.
+[`geo-linking/`](geo-linking/) identifies the 150 places behind the 206 LOC and LOCderiv attestations, links them to Pleiades and Wikidata, and maps the 137 that can be located. Identifications follow Huyse's *Griechisches Glossar* (Band 1, pp. 114–171), checked entry by entry against the printed page. [`geo-linking/skz-map.html`](geo-linking/skz-map.html) is a single self-contained file with no libraries and no network requests; [`geo-linking/README.md`](geo-linking/README.md) documents the gazetteer column by column.
 
 ## Citing
 
