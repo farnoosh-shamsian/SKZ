@@ -5,7 +5,7 @@ identified, linked to standard gazetteers, and mapped.
 
 | file | what it is |
 | --- | --- |
-| [`skz-places.tsv`](skz-places.tsv) | the gazetteer: 149 places behind the 206 `#LOC` / `#LOCderiv` attestations in [`../named-entities.tsv`](../named-entities.tsv), 134 of them with coordinates |
+| [`skz-places.tsv`](skz-places.tsv) | the gazetteer: 150 places behind the 206 `#LOC` / `#LOCderiv` attestations in [`../named-entities.tsv`](../named-entities.tsv), 136 of them with coordinates |
 | [`skz-map.html`](skz-map.html) | the visualisation: one self-contained file, no libraries and no network requests. Download it and open it in a browser, or view it through [htmlpreview](https://htmlpreview.github.io/?https://github.com/farnoosh-shamsian/SKZ/blob/main/geo-linking/skz-map.html) |
 
 ## The gazetteer
@@ -28,7 +28,7 @@ the Greek form plus the line number.
 | `text_flags`, `huyse_flags`, `link_flags` | what is emended, restored or missing in the text, what Huyse marks, and what is unlinked |
 | `resolution`, `n_flags` | how a disagreement with Huyse was settled, and how many flags the record carries |
 
-134 places carry coordinates. The map separates the other 15 by why they are off it:
+136 places carry coordinates. The map separates the other 14 by why they are off it:
 Huyse names them but their localisation is disputed or unknown, or he states outright that
 they cannot be identified.
 
@@ -44,13 +44,6 @@ were then resolved against the full Pleiades dumps and against every Wikidata it
 carrying a Pleiades ID (P1584), so that every identifier in the table comes from those
 sources rather than from a guess at the number.
 
-Corrections this produced: Ἀριστίαν is Arethusa / ar-Rastan,
-not the unlocated "Aristeia" of BAtlas 62; Ἁμαστρίας is Asturia in
-northern Iberia - a land, not the Paphlagonian city Amastris; Καμπανίας stands for Pamphylia and
-Λυσιτανίας for provincia Africa; Σηβάστιαν in line 29 is Sebasteia / Sivas; Μηιακαριρη
-is a corrupt Greek rendering of Kaisareia (Mazaca); Σουισαν is Souisa in Armenia
-Minor, not Susa; and Χορνανζημ, Βαδου and Νι-σαβωρ are not places at all.
-
 **Huyse 1999 is in copyright, and this repository points to it rather than reproducing
 it.** His printed Glossar wording is not included; each record carries his lemma, his
 ON/LN/VN type and the book page instead. From the Kommentar these files carry only what
@@ -58,6 +51,22 @@ those sections establish — which place is meant, its modern name, his certaint
 the march routes, the referent corrections and the cross-references — with a section and
 page for each. His prose, the argument behind each case, and his footnotes are not
 reproduced. Every identification here can be checked against the book at the page given.
+
+## Open-weight models on the same task
+
+The layer was built with Claude Opus 5 (see the note on AI on the
+[landing page](https://farnoosh-shamsian.github.io/SKZ/)). Two open-weight models,
+gpt-oss-120b and gpt-oss-20b, were tested on one step of that work: given the text of a
+Glossar entry, report its type, the modern name, and how certain Huyse is.
+
+Both matched Huyse's type almost every time. They gave the modern name for 91% and 84% of
+the entries that have one, and left it out for the rest. On certainty they did little
+better than answering "certain" every time (75% against 73%): of the 39 entries Huyse
+hedges, each got 6 right and called 17 certain, five of them entries he says cannot be
+identified.
+
+Reading the entries from the page images and linking places to Pleiades have not been
+tested with an open-weight model.
 
 ## Citing
 
