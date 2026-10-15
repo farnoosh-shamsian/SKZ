@@ -5,7 +5,7 @@ identified, linked to standard gazetteers, and mapped.
 
 | file | what it is |
 | --- | --- |
-| [`skz-places.tsv`](skz-places.tsv) | the gazetteer: 150 places behind the 206 `#LOC` / `#LOCderiv` attestations in [`../named-entities.tsv`](../named-entities.tsv), 137 of them with coordinates |
+| [`skz-places.tsv`](skz-places.tsv) | the gazetteer: 150 places behind the 206 `#LOC` / `#LOCderiv` attestations in [`../named-entities.tsv`](../named-entities.tsv), 139 of them with coordinates |
 | [`skz-map.html`](skz-map.html) | the visualisation: one self-contained file, no libraries and no network requests. Download it and open it in a browser, or view it through [htmlpreview](https://htmlpreview.github.io/?https://github.com/farnoosh-shamsian/SKZ/blob/main/geo-linking/skz-map.html) |
 
 ## The gazetteer
@@ -28,7 +28,7 @@ the Greek form plus the line number.
 | `text_flags`, `huyse_flags`, `link_flags` | what is emended, restored or missing in the text, what Huyse marks, and what is unlinked |
 | `resolution`, `n_flags` | how a disagreement with Huyse was settled, and how many flags the record carries |
 
-137 places carry coordinates. The map separates the other 13 by why they are off it:
+139 places carry coordinates. The map separates the other 11 by why they are off it:
 Huyse names them but their localisation is disputed or unknown, or he states outright that
 they cannot be identified.
 
