@@ -24,6 +24,10 @@ The named entity dataset contains 412 named entities, extracted and classified m
 
 [`geo-linking/`](geo-linking/) identifies the 150 places behind the 206 LOC and LOCderiv attestations, links them to Pleiades and Wikidata, and maps the 139 that can be located. Identifications follow Huyse's *Griechisches Glossar* (Band 1, pp. 114–171), checked entry by entry against the printed page. [`geo-linking/skz-map.html`](geo-linking/skz-map.html) is a single self-contained file with no libraries and no network requests; [`geo-linking/README.md`](geo-linking/README.md) documents the gazetteer column by column.
 
+## A note on AI
+
+The corpus and the named entities were annotated by hand. The geographic layer was built automatically with Claude Opus 5: Huyse's Glossar was read off the scanned pages by OCR, matched to the annotated names, and resolved against Pleiades and Wikidata; the map was generated the same way. Errors may remain; if you find one, please [let me know](https://farnoosh-shamsian.github.io/pages/contact.html). Two open-weight models were later tested on part of the same task; see [the geo-linking README](geo-linking/README.md#open-weight-models-on-the-same-task).
+
 ## Citing
 
 F. Shamsian & M. Berti, "Annotating Named Entities in the Trilingual Inscription at Kaʿba-ye Zartošt (ŠKZ)", *Digital Classics Online* 12,2 (2026), [doi:10.11588/dco.2026.12.112297](https://doi.org/10.11588/dco.2026.12.112297).
